@@ -1,5 +1,8 @@
 package com.payroll_system;
 
+import com.payroll_system.abstracts.PartTime;
+import com.payroll_system.abstracts.Vehicle;
+import com.payroll_system.enums.gender;
 import com.payroll_system.inter.IPrintable;
 
 public class CommissionBasedPartTime extends PartTime {
@@ -8,8 +11,8 @@ public class CommissionBasedPartTime extends PartTime {
 		private int commission;
 		
 		
-		public CommissionBasedPartTime(int commission, int rate, float hours, String name, int age, Vehicle vehicle) {
-			super(rate, hours, name, age, vehicle);
+		public CommissionBasedPartTime(int commission, int rate, float hours, String name, int age , gender gen , Vehicle vehicle) {
+			super(rate, hours, name, age, gen , vehicle);
 			this.commission = commission;
 		}
 		
@@ -30,7 +33,7 @@ public class CommissionBasedPartTime extends PartTime {
 
 		@Override
 		public String printData() {
-			String temp = "\nName : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nEmployee is PartTime / Commissioned"+"\nRate : "+this.getRate()+"\nHours : "+this.getHours()+"\nCommission : "+this.getCommission()+"\n Earnings : "+this.commissionCalcEarnings()+"( "+((float)this.getHours()*this.getRate())+" + "+this.getCommission()+"% of "+((float)this.getHours()*this.getRate())+")";
+			String temp = "\nName : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nGender : "+this.getGen()+"\nEmployee is PartTime / Commissioned"+"\nRate : "+this.getRate()+"\nHours : "+this.getHours()+"\nCommission : "+this.getCommission()+"\n Earnings : "+this.commissionCalcEarnings()+"( "+((float)this.getHours()*this.getRate())+" + "+this.getCommission()+"% of "+((float)this.getHours()*this.getRate())+")";
 			
 			if(this.getVehicle() != null)
 			{

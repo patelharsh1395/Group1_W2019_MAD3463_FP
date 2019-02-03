@@ -3,6 +3,9 @@ package com.payroll_system;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.payroll_system.abstracts.Employee;
+import com.payroll_system.enums.gender;
+
 public class SampleMain {
 
 	public static void main(String[] args) {
@@ -12,35 +15,20 @@ public class SampleMain {
 		
 		//System.out.println(e1.calcBirthYear());
 		
-		Intern in = new Intern("Lambton","Mahesh", 20, null);
-	//	System.out.println(in.printData());
+		Intern in = new Intern("Lambton","Mahesh", 20, gender.MALE , null);
+		FullTime ft = new FullTime(10000, 500,"Raju", 30, gender.MALE ,new MotorCycle("Audi","A4" , "CA123", 15));
+		CommissionBasedPartTime cm = new CommissionBasedPartTime(10, 5, 5, "Gurminder", 27 , gender.FEMALE ,new Car("Audi","A4" , "CA123", 15) );
+		FixedBasedPartTime fp = new FixedBasedPartTime(1000, 5, 5,"Rohan", 27 , gender.MALE ,new MotorCycle("Audi","A4" , "CA123", 15) );
 		
-	//	System.out.println("\n");
 		
-		FullTime ft = new FullTime(10000, 500,"Raju", 30,new MotorCycle("Audi","A4" , "CA123", 15));
-	//	System.out.println(ft.printData());
-		
-	//	System.out.println("\n");
-		CommissionBasedPartTime cm = new CommissionBasedPartTime(10, 5, 5, "Gurminder", 27,new Car("Audi","A4" , "CA123", 15) );
-		//System.out.println(cm.printData());
-		
-		System.out.println("\n");
-		FixedBasedPartTime fp = new FixedBasedPartTime(1000, 5, 5,"Gurminder", 27,new MotorCycle("Audi","A4" , "CA123", 15) );
-			//	System.out.println(fp.printData());
+		SingleToneExample  singleton = SingleToneExample.getObj();
+		singleton.addIntoList(in);
+		singleton.addIntoList(ft);
+		singleton.addIntoList(cm);
+		singleton.addIntoList(fp);
 				
-				
-		List<Employee> ee = new ArrayList<>();
-		ee.add(in);
-		ee.add(ft);
-		ee.add(cm);
-		ee.add(fp);
+		singleton.displayList();		
 		
-		
-		for(Employee e : ee) {
-			System.out.println(e.printData());
-			System.out.print("\n");
-			
-		}
 		
 				
 	}

@@ -1,5 +1,7 @@
 package com.payroll_system;
 
+import com.payroll_system.abstracts.Vehicle;
+
 public class MotorCycle extends Vehicle {
 		private String motomodelnumber;
 
@@ -19,7 +21,7 @@ public class MotorCycle extends Vehicle {
 		@Override
 		public String printData() {
 		
-			return "\nEmployee has MotorCycle"+"\nMake : "+this.getMake()+"\nPlate : "+this.getPlate()+"\nCar Model : "+this.getMotomodelnumber();
+			return "\nEmployee has MotorCycle"+"\nMake : "+this.getMake()+"\nPlate : "+this.getPlate()+"\nCar Model : "+this.getMotomodelnumber()+"\n";
 		}
 		
 		

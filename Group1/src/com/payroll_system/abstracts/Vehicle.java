@@ -1,4 +1,4 @@
-package com.payroll_system;
+package com.payroll_system.abstracts;
 
 import com.payroll_system.inter.IPrintable;
 

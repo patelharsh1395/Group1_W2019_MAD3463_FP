@@ -1,4 +1,6 @@
-package com.payroll_system;
+package com.payroll_system.abstracts;
+
+import com.payroll_system.enums.gender;
 
 public abstract class PartTime extends Employee {
 		private int rate;
@@ -6,8 +8,8 @@ public abstract class PartTime extends Employee {
 		
 		
 		
-		public PartTime(int rate, float hours , String name, int age,Vehicle vehicle) {
-			super(name, age, vehicle);
+		public PartTime(int rate, float hours , String name, int age , gender gen ,Vehicle vehicle) {
+			super(name, age, gen , vehicle);
 			this.rate = rate;
 			this.hours = hours;
 		}

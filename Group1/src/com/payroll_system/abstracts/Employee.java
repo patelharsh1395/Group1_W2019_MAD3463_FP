@@ -1,12 +1,15 @@
-package com.payroll_system;
+package com.payroll_system.abstracts;
 
 import java.util.Calendar;
 
+import com.payroll_system.enums.gender;
 import com.payroll_system.inter.IPrintable;
 
 public abstract class Employee implements IPrintable {
 	private String Name;
 	private int age;	
+	private gender gen;
+	
 	private Vehicle vehicle;
 	
 	
@@ -16,11 +19,12 @@ public abstract class Employee implements IPrintable {
 		
 	}
 	
-	public Employee(String name, int age,Vehicle vehicle) {
+	public Employee(String name, int age,gender gen, Vehicle vehicle) {
 		super();
 		Name = name;
 		this.age = age;
 		this.vehicle= vehicle;
+		this.gen= gen;
 	}
 	
 	
@@ -53,6 +57,13 @@ public abstract class Employee implements IPrintable {
 
 	public void setVehicle(Vehicle vehicle) {
 		this.vehicle = vehicle;
+	}
+	public gender getGen() {
+		return gen;
+	}
+
+	public void setGen(gender gen) {
+		this.gen = gen;
 	}
 
 			

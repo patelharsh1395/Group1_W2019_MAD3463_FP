@@ -1,5 +1,8 @@
 package com.payroll_system;
 
+import com.payroll_system.abstracts.Employee;
+import com.payroll_system.abstracts.Vehicle;
+import com.payroll_system.enums.gender;
 import com.payroll_system.inter.IPrintable;
 
 public class Intern extends Employee  {
@@ -11,8 +14,8 @@ public class Intern extends Employee  {
 		
 		
 		 
-		public Intern(String schoolname,String name, int age , Vehicle vehicle ) {
-			super(name,age, vehicle);
+		public Intern(String schoolname,String name, int age , gender gen , Vehicle vehicle ) {
+			super(name,age, gen , vehicle);
 			this.schoolname = schoolname;
 		}
 
@@ -30,7 +33,7 @@ public class Intern extends Employee  {
 
 		@Override
 		public String printData() {
-			String temp = "Name : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nEmployee is Intern"+"\nSchool name : "+ this.getSchoolname()+"\nEarnings : "+ this.calcEarning();
+			String temp = "Name : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nGender : "+this.getGen()+"\nEmployee is Intern"+"\nSchool name : "+ this.getSchoolname()+"\nEarnings : "+ this.calcEarning();
 			if(this.getVehicle() != null)
 			{
 				if(this.getVehicle() instanceof Car )
