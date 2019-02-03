@@ -23,27 +23,32 @@ public class FixedBasedPartTime  extends PartTime {
 			return this.getFixedamount()+((float)this.getHours()*this.getRate());
 		}
 		
-		public String display()
-		{
-			IPrintable ip = () -> {return "Name : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nEmployee is PartTime / Commissioned"+"\nRate : "+this.getRate()+"\nHours : "+this.getHours()+"\nFixed amount : "+this.getFixedamount()+"\n Earnings : "+this.fixedAmountCalcEarnings()+"( "+((float)this.getHours()*this.getRate())+" + "+this.getFixedamount()+")";};
-			String temp="";
+		
+
+		@Override
+		public String printData() {
+			String temp = "Name : "+this.getName()+"\nYear of Birth : "+this.calcBirthYear()+"\nEmployee is PartTime / Commissioned"+"\nRate : "+this.getRate()+"\nHours : "+this.getHours()+"\nFixed amount : "+this.getFixedamount()+"\n Earnings : "+this.fixedAmountCalcEarnings()+"( "+((float)this.getHours()*this.getRate())+" + "+this.getFixedamount()+")";
+			
 			if(this.getVehicle() != null)
 			{
-				if(this.getVehicle() instanceof Car )
+				if(this.getVehicle() instanceof Car)
 				{
-					temp = "\nEmployee has Car"+"\nMake : "+this.getVehicle().getMake()+"\nPlate : "+this.getVehicle().getPlate()+"\nMileage : "+this.getVehicle().getMileage()+"\n Model no : "+((Car)this.getVehicle()).getCarmodelnumber();
+					temp+= ((Car)this.getVehicle()).printData();
 					
 				}
 				else
 				{
-					temp = "\nEmployee has motorcycle"+"\nMake : "+this.getVehicle().getMake()+"\nPlate : "+this.getVehicle().getPlate()+"\nMileage : "+this.getVehicle().getMileage()+"\n Model no : "+((MotorCycle)this.getVehicle()).getMotomodelnumber();
+					temp+= ((MotorCycle)this.getVehicle()).printData();
 					
 				}
 			}
 			else
 			{
-				temp = "Employee dont have vehicle";
+				temp += "\nEmployee dont have vehicle";
 			}
-			return ip.printData()+temp;
+			
+			return temp;
+			
+			
 		}
 }

@@ -15,6 +15,12 @@ public class MotorCycle extends Vehicle {
 		public void setMotomodelnumber(String motomodelnumber) {
 			this.motomodelnumber = motomodelnumber;
 		}
+
+		@Override
+		public String printData() {
+		
+			return "\nEmployee has MotorCycle"+"\nMake : "+this.getMake()+"\nPlate : "+this.getPlate()+"\nCar Model : "+this.getMotomodelnumber();
+		}
 		
 		
 		

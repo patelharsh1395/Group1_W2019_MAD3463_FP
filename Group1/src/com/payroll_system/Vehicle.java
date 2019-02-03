@@ -1,6 +1,8 @@
 package com.payroll_system;
 
-public class Vehicle {
+import com.payroll_system.inter.IPrintable;
+
+public abstract class Vehicle implements IPrintable {
 		private String make;
 		private String plate;
 		private int mileage;

@@ -2,7 +2,9 @@ package com.payroll_system;
 
 import java.util.Calendar;
 
-public class Employee {
+import com.payroll_system.inter.IPrintable;
+
+public abstract class Employee implements IPrintable {
 	private String Name;
 	private int age;	
 	private Vehicle vehicle;

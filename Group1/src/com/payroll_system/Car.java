@@ -19,10 +19,11 @@ public class Car extends Vehicle {
 			public void setCarmodelnumber(String carmodelnumber) {
 				this.carmodelnumber = carmodelnumber;
 			}
-			public String display()
-			{
-				IPrintable ip = () -> {return "\nMake"+this.getMake()+"\nPlate"+this.getPlate()+"\nCar Model"+this.carmodelnumber  ;};
-				return ip.printData();
+			
+			@Override
+			public String printData() {
+				
+				return "\nEmployee has Car"+"\nMake : "+this.getMake()+"\nPlate : "+this.getPlate()+"\nCar Model : "+this.getCarmodelnumber();
 			}
 			
 }

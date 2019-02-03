@@ -1,6 +1,6 @@
 package com.payroll_system;
 
-public class PartTime extends Employee {
+public abstract class PartTime extends Employee {
 		private int rate;
 		private float hours;
 		
