@@ -2,6 +2,7 @@ package com.payroll_system.abstracts;
 
 import java.util.Calendar;
 
+import com.payroll_system.UserDefinedExe;
 import com.payroll_system.enums.gender;
 import com.payroll_system.inter.IPrintable;
 
@@ -35,15 +36,31 @@ public abstract class Employee implements IPrintable {
 		Name = name;
 	}
 	public int getAge() {
+	
+	
 		return age;
 	}
 	public void setAge(int age) {
 		this.age = age;
 	}
 			
-	public int calcBirthYear()
+	public int calcBirthYear() 
 	{
-		return (Calendar.getInstance().get(Calendar.YEAR)-age);
+		
+		try {
+			
+			
+			if(this.getAge() < 0)
+			{
+				throw new UserDefinedExe("Age is negative");
+			
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return (Calendar.getInstance().get(Calendar.YEAR)-this.getAge());
 	}
 	
 	public int calcEarning()
